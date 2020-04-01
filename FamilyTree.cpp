@@ -1,9 +1,18 @@
 #include <iostream>
 using namespace std;
 
+
+
+struct node{
+	string name;
+	node *left;
+	node *right;
+};
+
+
 class Tree{
 public:
-string name;
+node head;
 
 	bool addFather(std::string a,std::string b){}
 	bool addMother(std::string a,std::string b){}
