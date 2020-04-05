@@ -74,7 +74,7 @@ family::Tree T2 ("George");
     CHECK(T2.find("me")==string("George")); 
     CHECK(T2.find("great-grandmother")==string("Elizabeth"));          
     CHECK(T2.find("great-grandfather")==string("Philip"));               
-    CHECK(T2.find("great-great-grandfather")==string("George VI"));		//16
+    CHECK(T2.find("great-great-grandfather")==string("George VI"));		
     T2.remove("Philip"); 
        try{
         T2.addMother("George", "Meghan");
@@ -98,7 +98,7 @@ family::Tree T2 ("George");
     CHECK(T2.relation("Philip")==string("unrelated"));
     CHECK(T2.relation("Andrew")==string("unrelated"));
     T2.addFather("Charles", "Edward");
-    CHECK( T2.relation("Edward") ==string("great-grandFather"));
+    CHECK( T2.relation("Edward") ==string("great-grandFather"));	//40
          T2.display();
 }
 
@@ -141,7 +141,7 @@ family::Tree T3 ("naor"); // Yosef is the "root" of the tree (the youngest perso
     CHECK(T3.relation("Terah")==string("unrelated"));
     CHECK(T3.relation("Hagar")==string("unrelated"));
     T3.addFather("Rachel", "Nachor");
-    CHECK( T3.relation("Nachor") ==string("great-grandfather"));				//20
+    CHECK( T3.relation("Nachor") ==string("great-grandfather"));				//60
 	T3.display();
     T3.remove("shimon"); 
     CHECK(T3.relation("Rachel")==string("unrelated")); 
@@ -151,3 +151,102 @@ family::Tree T3 ("naor"); // Yosef is the "root" of the tree (the youngest perso
 	T3.display();
 
 }
+     family::Tree T4 ("Nachshon"); 
+ 	T4.addFather("Nachshon", "Oz")   
+ 	 .addMother("Nachshon", "Ella")   
+ 	 .addFather("Oz", "Moshe")
+ 	 .addMother("Oz", "Bracha")
+ 	.addFather("Moshe", "Yaakov")
+     .addFather("Yaakov", "Yosef")
+     .addMother("Yaakov", "Rivka");
+     CHECK( T4.relation("Nachshon") ==string("me"));
+     CHECK( T4.relation("Batsheva") ==string("mother"));
+     CHECK( T4.relation("Oz") ==string("father"));
+     CHECK( T4.relation("Moshe") ==string("grandfather"));
+     CHECK( T4.relation("Bracha") ==string("grandmother"));
+     CHECK( T4.relation("Yaakov") ==string("great-grandfather"));
+     CHECK( T4.relation("Rivka") ==string("great-great-grandmother"));
+     CHECK(T4.relation("Yosef")==string("great-great-grandfather"));
+     CHECK(T4.relation("Eli")==string("unrelated"));
+     CHECK(T4.relation("Shachar")==string("unrelated"));
+     T4.addMother("Yosef", "Sara");
+     CHECK(T4.relation("Sara")==string("great-great-great-grandmother"));
+     CHECK(T4.find("mother")==string("Ella"));
+	     CHECK(T4.find("father")==string("Oz"));
+     CHECK(T4.find("grandmother")==string("Bracha"));
+     CHECK(T4.find("grandfather")==string("Moshe"));
+     CHECK(T4.find("me")==string("Nachshon")); 
+     CHECK(T4.find("great-grandfather")==string("Yaakov"));
+     CHECK(T4.find("great-great-grandfather")==string("Yosef"));
+     CHECK(T4.find("great-great-grandmother")==string("Rivka"));
+     CHECK(T4.find("great-great-great-grandmother")==string("Sara"));
+     try{
+        CHECK(T4.find("mother") == string("Alice"));		//fails
+     }
+     catch(exception &ex){
+         cout<<ex.what()<<endl;
+     }
+     T4.remove("Yaakov");
+     CHECK(T4.relation("Yosef")==string("unrelated"));
+	 CHECK(T4.relation("Rivka")==string("unrelated"));
+    CHECK(T4.relation("Sara")==string("unrelated"));
+     CHECK(T4.relation("Uriya")==string("unrelated"));		//85
+     T4.display();
+
+      family::Tree T5 ("Nave"); 
+ 	T5.addFather("Nave", "Shlomo")   
+ 	 .addMother("Nave", "Miri")   
+ 	 .addFather("Miri", "Shimon")
+ 	 .addMother("Miri", "Rachel")
+ 	 .addFather("Shimon", "Moshe")
+     .addMother("Shimon", "Dvora")
+     .addFather("Moshe", "Dov")
+     .addFather("Dov", "Yoel")
+     .addMother("Dov", "Ann")
+	 .addMother("Miri", "Rachel")
+	 .addMother("Ann", "Rose");
+		       CHECK( T5.relation("Nave") ==string("me"));
+		       CHECK( T5.relation("Shlomo") ==string("father"));
+		       CHECK( T5.relation("Miri") ==string("mother"));
+		       CHECK( T5.relation("Shimon") ==string("grandfather"));
+		       CHECK( T5.relation("Rachel") ==string("grandmother"));
+		       CHECK( T5.relation("Moshe") ==string("great-grandfather"));
+		       CHECK( T5.relation("Dov") ==string("great-great-grandfather"));
+		       CHECK( T5.relation("Ann") ==string("great-great-great-grandfather"));
+		       CHECK(T5.relation("Nave")==string("me"));
+		       CHECK(T5.relation("Yagil")==string("unrelated"));
+		       CHECK(T5.relation("Shimon")==string("grandfather"));
+			   CHECK(T5.relation("Rachel")==string("grandmother"));
+		       CHECK(T5.find("mother")==string("Miri"));
+		       CHECK(T5.find("father")==string("Shlomo"));
+		       CHECK(T5.find("grandmother")==string("Rachel"));
+		       CHECK(T5.find("grandfather")==string("Shimon"));
+		       CHECK(T5.find("me")==string("Nave")); 
+		       CHECK(T5.find("great-grandfather")==string("Moshe"));
+		       CHECK(T5.find("great-great-grandfather")==string("Dov"));
+		       CHECK(T5.find("great-great-great-grandmother")==string("Ann"));		//105
+		       try{
+		           T5.find("Ori");
+		       }
+		       catch(exception &ex){
+		           cout<<ex.what()<<endl;
+		       }
+	 T5.display();
+		cout << endl;
+     T5.remove("Dov");
+     T5.display();
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
