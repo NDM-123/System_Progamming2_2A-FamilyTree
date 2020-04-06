@@ -151,6 +151,7 @@ family::Tree T3 ("naor"); // Yosef is the "root" of the tree (the youngest perso
 	T3.display();
 
 }
+	TEST_CASE("Test 4") {
      family::Tree T4 ("Nachshon"); 
  	T4.addFather("Nachshon", "Oz")   
  	 .addMother("Nachshon", "Ella")   
@@ -192,7 +193,8 @@ family::Tree T3 ("naor"); // Yosef is the "root" of the tree (the youngest perso
     CHECK(T4.relation("Sara")==string("unrelated"));
      CHECK(T4.relation("Uriya")==string("unrelated"));		//85
      T4.display();
-
+}
+	TEST_CASE("Test 5") {
       family::Tree T5 ("Nave"); 
  	T5.addFather("Nave", "Shlomo")   
  	 .addMother("Nave", "Miri")   
