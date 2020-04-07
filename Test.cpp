@@ -84,15 +84,15 @@ TEST_CASE("check remove")
     Tree T("Dan");
     T.addFather("Dan", "Yaakov").addFather("Yaakov", "Yitzak").addMother("Dan", "Bilhaa").addFather("Yitzak", "Avraham");
     T.remove("Avraham");
-    CHECK(T.relation("Avraham") == NULL);
+    CHECK(T.relation("Avraham") == nullptr);
     T.remove("Bilhaa");
-    CHECK(T.relation("Bilhaa") == NULL);
+    CHECK(T.relation("Bilhaa") == nullptr);
     T.remove("Yitzak");
-    CHECK(T.relation("Yitzak") == NULL);
+    CHECK(T.relation("Yitzak") == nullptr);
     T.remove("Yaakov");
-    CHECK(T.relation("Yaakov") == NULL);
+    CHECK(T.relation("Yaakov") == nullptr);
     T.remove("Dan");	
-    CHECK(T.relation("Dan") == NULL);
+    CHECK(T.relation("Dan") == nullptr);
 }
 TEST_CASE("Test 1") {
 family::Tree T ("Yosef"); // Yosef is the "root" of the tree (the youngest person).
