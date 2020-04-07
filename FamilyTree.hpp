@@ -9,7 +9,7 @@ class Tree{
 public:
 	Tree(string s){
 	this->name=s;
-	this->left=this->right=nullptr;
+	this->father=this->mother=nullptr;
 	this->head=nullptr;
 }
 	string name;
