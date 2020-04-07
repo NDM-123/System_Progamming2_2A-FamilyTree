@@ -14,7 +14,7 @@ TEST_CASE("check addFather")
 
     tree.addFather("Yosef", "Yaakov").addFather("Yaakov", "Yitzak").addFather("Yitzak", "Avraham");
     CHECK((tree.head->father->name).compare("Yaakov") == 0);
-    CHECK((tree.head->father->father->name).compare("Yosef") == 0);
+    CHECK((tree.head->father->father->name).compare("Yitzak") == 0);
     CHECK((tree.head->father->father->father->name).compare("Avraham") == 0);
 }
 
