@@ -13,8 +13,8 @@ public:
 	this->head=nullptr;
 }
 	string name;
-	Tree* left;
-	Tree* right;
+	Tree* father;
+	Tree* mother;
         Tree* head;
 	Tree& addFather(std::string a,std::string b);
 	Tree& addMother(std::string a,std::string b);
