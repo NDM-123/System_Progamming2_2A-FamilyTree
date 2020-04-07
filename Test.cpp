@@ -13,9 +13,9 @@ TEST_CASE("check addFather")
     Tree tree("Yosef");
 
     tree.addFather("Yosef", "Yaakov").addFather("Yaakov", "Yitzak").addFather("Yitzak", "Avraham");
-    CHECK((tree->head->father->name).compare("Yaakov") == 0);
-    CHECK((tree->head->father->father->name).compare("Yitzak") == 0);
-    CHECK((tree->head->father->father->father->name).compare("Avraham") == 0);
+    CHECK((tree.head->father->name).compare("Yaakov") == 0);
+    CHECK((tree.head->father->father->name).compare("Yitzak") == 0);
+    CHECK((tree.head->father->father->father->name).compare("Avraham") == 0);
 }
 
 TEST_CASE("check addMother")
@@ -23,9 +23,9 @@ TEST_CASE("check addMother")
     Tree tree("Dina");
 
     tree.addMother("Dina", "Leah").addMother("Leah", "Rivka").addMother("Rivka", "Sara");
-    CHECK((tree->head->mother->name).compare("Leah") == 0);
-    CHECK((tree->head->mother->mother->name).compare("Rivka") == 0);
-    CHECK((tree->head->mother->mother->mother->name).compare("Sara") == 0);
+    CHECK((tree.head->mother->name).compare("Leah") == 0);
+    CHECK((tree.head->mother->mother->name).compare("Rivka") == 0);
+    CHECK((tree.head->mother->mother->mother->name).compare("Sara") == 0);
 }
 TEST_CASE("check find")
 {
