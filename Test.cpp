@@ -8,76 +8,76 @@ using namespace std;
 using namespace family;
 
 
-// TEST_CASE("check addFather")
-// {
-//     Tree tree("Yosef");
+TEST_CASE("check addFather")
+{
+    Tree tree("Yosef");
 
-//     tree.addFather("Yosef", "Yaakov").addFather("Yaakov", "Yitzak").addFather("Yitzak", "Avraham");
-//     CHECK((tree.head->father->name).compare("Yaakov") == 0);
-//     CHECK((tree.head->father->father->name).compare("Yitzak") == 0);
-//     CHECK((tree.head->father->father->father->name).compare("Avraham") == 0);
-// }
+    tree.addFather("Yosef", "Yaakov").addFather("Yaakov", "Yitzak").addFather("Yitzak", "Avraham");
+    CHECK((tree.head->father->name).compare("Yaakov") == 0);
+    CHECK((tree.head->father->father->name).compare("Yitzak") == 0);
+    CHECK((tree.head->father->father->father->name).compare("Avraham") == 0);
+}
 
-// TEST_CASE("check addMother")
-// {
-//     Tree tree("Dina");
+TEST_CASE("check addMother")
+{
+    Tree tree("Dina");
 
-//     tree.addMother("Dina", "Leah").addMother("Leah", "Rivka").addMother("Rivka", "Sara");
-//     CHECK((tree.head->mother->name).compare("Leah") == 0);
-//     CHECK((tree.head->mother->mother->name).compare("Rivka") == 0);
-//     CHECK((tree.head->mother->mother->mother->name).compare("Sara") == 0);
-// }
-// TEST_CASE("check find")
-// {
-//     Tree T("Dan");
-//     T.addFather("Dan", "Yaakov")
-//      .addFather("Yaakov", "Yitzak")
-//      .addFather("Yitzak", "Avraham")
-//      .addMother("Yitzak", "Sara")	    
-//      .addMother("Dan", "Bilhaa")	    
-//      .addMother("Bilhaa", "Ricky")	    
-//      .addMother("Yaakov", "Tova")	    	    
-//      .addMother("Lavan", "Hagar")
-//      .addFather("Lavan", "Yishmael")
-//      .addFather("Bilhaa","Lavan");
-//     CHECK(T.find("me") == "Dan");
-//     CHECK(T.find("mother") == "Bilhaa");
-//     CHECK(T.find("father") == "Yaakov");
-//     CHECK(T.find("grandfather") == "Yitzak");
-//     CHECK(T.find("grandfather") == "Lavan");	
-//     CHECK(T.find("grandmother") == "Ricky");
-//     CHECK(T.find("grandmother") == "Tova");
-//     CHECK(T.find("great-grandmother") == "Hagar");
-//     CHECK(T.find("great-grandmother") == "Sara");
-//     CHECK(T.find("great-grandfather") == "Yishmael");
-//     CHECK(T.find("great-grandfather") == "Avraham");		//17
-// }
+    tree.addMother("Dina", "Leah").addMother("Leah", "Rivka").addMother("Rivka", "Sara");
+    CHECK((tree.head->mother->name).compare("Leah") == 0);
+    CHECK((tree.head->mother->mother->name).compare("Rivka") == 0);
+    CHECK((tree.head->mother->mother->mother->name).compare("Sara") == 0);
+}
+TEST_CASE("check find")
+{
+    Tree T("Dan");
+    T.addFather("Dan", "Yaakov")
+     .addFather("Yaakov", "Yitzak")
+     .addFather("Yitzak", "Avraham")
+     .addMother("Yitzak", "Sara")	    
+     .addMother("Dan", "Bilhaa")	    
+     .addMother("Bilhaa", "Ricky")	    
+     .addMother("Yaakov", "Tova")	    	    
+     .addMother("Lavan", "Hagar")
+     .addFather("Lavan", "Yishmael")
+     .addFather("Bilhaa","Lavan");
+    CHECK(T.find("me") == "Dan");
+    CHECK(T.find("mother") == "Bilhaa");
+    CHECK(T.find("father") == "Yaakov");
+    CHECK(T.find("grandfather") == "Yitzak");
+    CHECK(T.find("grandfather") == "Lavan");	
+    CHECK(T.find("grandmother") == "Ricky");
+    CHECK(T.find("grandmother") == "Tova");
+    CHECK(T.find("great-grandmother") == "Hagar");
+    CHECK(T.find("great-grandmother") == "Sara");
+    CHECK(T.find("great-grandfather") == "Yishmael");
+    CHECK(T.find("great-grandfather") == "Avraham");		//17
+}
 
-// TEST_CASE("check relation"){
-//     Tree T("Dan");
+TEST_CASE("check relation"){
+    Tree T("Dan");
     
-//     T.addFather("Dan", "Yaakov")
-//      .addFather("Yaakov", "Yitzak")
-//      .addFather("Yitzak", "Avraham")
-//      .addMother("Yitzak", "Sara")	    
-//      .addMother("Dan", "Bilhaa")	    
-//      .addMother("Bilhaa", "Ricky")	    
-//      .addMother("Yaakov", "Tova")	    	    
-//      .addMother("Lavan", "Hagar")
-//      .addFather("Lavan", "Yishmael")
-//      .addFather("Bilhaa","Lavan");
-//     CHECK(T.relation("Dan").compare("me") == 0);
-//     CHECK(T.relation("Yaakov").compare("father") == 0);
-//     CHECK(T.relation("Bilhaa").compare("mother") == 0);
-//     CHECK(T.relation("Yitzak").compare("grandfather") == 0);
-//     CHECK(T.relation("Lavan").compare("grandfather") == 0);
-//     CHECK(T.relation("Ricky").compare("grandmother") == 0);
-//     CHECK(T.relation("Tova").compare("grandmother") == 0);
-//     CHECK(T.relation("Avraham").compare("great-grandfather") == 0);
-//     CHECK(T.relation("Yishmael").compare("great-grandfather") == 0);
-//     CHECK(T.relation("Sara").compare("great-grandmother") == 0);
-//     CHECK(T.relation("Hagar").compare("great-grandmother") == 0);		//28
-// }
+    T.addFather("Dan", "Yaakov")
+     .addFather("Yaakov", "Yitzak")
+     .addFather("Yitzak", "Avraham")
+     .addMother("Yitzak", "Sara")	    
+     .addMother("Dan", "Bilhaa")	    
+     .addMother("Bilhaa", "Ricky")	    
+     .addMother("Yaakov", "Tova")	    	    
+     .addMother("Lavan", "Hagar")
+     .addFather("Lavan", "Yishmael")
+     .addFather("Bilhaa","Lavan");
+    CHECK(T.relation("Dan").compare("me") == 0);
+    CHECK(T.relation("Yaakov").compare("father") == 0);
+    CHECK(T.relation("Bilhaa").compare("mother") == 0);
+    CHECK(T.relation("Yitzak").compare("grandfather") == 0);
+    CHECK(T.relation("Lavan").compare("grandfather") == 0);
+    CHECK(T.relation("Ricky").compare("grandmother") == 0);
+    CHECK(T.relation("Tova").compare("grandmother") == 0);
+    CHECK(T.relation("Avraham").compare("great-grandfather") == 0);
+    CHECK(T.relation("Yishmael").compare("great-grandfather") == 0);
+    CHECK(T.relation("Sara").compare("great-grandmother") == 0);
+    CHECK(T.relation("Hagar").compare("great-grandmother") == 0);		//28
+}
 
 // TEST_CASE("check remove")
 // {
