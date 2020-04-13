@@ -2,27 +2,31 @@
 #include <iostream>
 #include <string>
 #include <stdbool.h>
-using namespace std;
+
+	using namespace std;
 	namespace family{
+class node {
+
+public:
+	string name;
+	node *father;
+	node *mother;
+	node (string n);		
+};
+
 
 class Tree{
 public:
-	Tree(string s){
-	this->name=s;
-	this->father=this->mother=nullptr;
-	this->head=nullptr;
-}
-	string name;
-	Tree* father;
-	Tree* mother;
-        Tree* head;
-	Tree& addFather(std::string a,std::string b);
-	Tree& addMother(std::string a,std::string b);
+	
+        node* head;
+	Tree (string s);
+	Tree addFather(std::string a,std::string b);
+	Tree addMother(std::string a,std::string b);
 	void display();
 	std::string relation(std::string a);
 	std::string find(std::string a);
 	bool remove(std::string a);
- 
+
 
 };
 }
