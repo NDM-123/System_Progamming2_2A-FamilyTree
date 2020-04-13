@@ -7,7 +7,7 @@
 using namespace std;
 using namespace family;
 
-
+/*This function dosent work now only when i add the implementation*/
 // TEST_CASE("check addFather")
 // {
 //     Tree tree("Yosef");
@@ -17,7 +17,7 @@ using namespace family;
 //     CHECK((tree.head->father->father->name).compare("Yitzak") == 0);
 //     CHECK((tree.head->father->father->father->name).compare("Avraham") == 0);
 // }
-
+/*This function dosent work now only when i add the implementation*/
 // TEST_CASE("check addMother")
 // {
 //     Tree tree("Dina");
@@ -40,6 +40,7 @@ TEST_CASE("check find")
      .addMother("Lavan", "Hagar")
      .addFather("Lavan", "Yishmael")
      .addFather("Bilhaa","Lavan");
+	T.display();
     CHECK(T.find("me") == "Dan");
     CHECK(T.find("mother") == "Bilhaa");
     CHECK(T.find("father") == "Yaakov");
@@ -55,7 +56,7 @@ TEST_CASE("check find")
 
 TEST_CASE("check relation"){
     Tree T("Dan");
-    
+    T.display();
     T.addFather("Dan", "Yaakov")
      .addFather("Yaakov", "Yitzak")
      .addFather("Yitzak", "Avraham")
@@ -78,7 +79,7 @@ TEST_CASE("check relation"){
     CHECK(T.relation("Sara").compare("great-grandmother") == 0);
     CHECK(T.relation("Hagar").compare("great-grandmother") == 0);		//28
 }
-
+/*This function dosent work now only when i add the implementation*/
 // TEST_CASE("check remove")
 // {
 //     Tree T("Dan");
@@ -94,7 +95,7 @@ TEST_CASE("check relation"){
 //     T.remove("Dan");	
 //     CHECK(T.relation("Dan") == nullptr);
 // }
-TEST_CASE("Test 1") {
+TEST_CASE("Test Tree 1") {
 family::Tree T ("Yosef"); // Yosef is the "root" of the tree (the youngest person).
 	T.addFather("Yosef", "Yaakov");   // Tells the tree that the father of Yosef is Yaakov.
 	 T.addMother("Yosef", "Rachel");   // Tells the tree that the mother of Yosef is Rachel.
@@ -133,7 +134,7 @@ family::Tree T ("Yosef"); // Yosef is the "root" of the tree (the youngest perso
 
 
 
-TEST_CASE("Test 2") {
+TEST_CASE("Test Tree 2") {
 family::Tree T2 ("George"); 
 	T2.addFather("George", "William");   
 	 T2.addMother("George", "Catherine"); 
@@ -193,7 +194,7 @@ family::Tree T2 ("George");
 
 
 
-TEST_CASE("Test 3") {
+TEST_CASE("Test Tree 3") {
 family::Tree T3 ("naor"); // Yosef is the "root" of the tree (the youngest person).
 	T3.addFather("naor", "shimon");   // Tells the tree that the father of Yosef is Yaakov.
 	 T3.addMother("naor", "Rachel");   // Tells the tree that the mother of Yosef is Rachel.
@@ -240,7 +241,7 @@ family::Tree T3 ("naor"); // Yosef is the "root" of the tree (the youngest perso
 	T3.display();
 
 }
-	TEST_CASE("Test 4") {
+	TEST_CASE("Test Tree 4") {
      family::Tree T4 ("Nachshon"); 
  	T4.addFather("Nachshon", "Oz")   
  	 .addMother("Nachshon", "Ella")   
@@ -284,7 +285,7 @@ family::Tree T3 ("naor"); // Yosef is the "root" of the tree (the youngest perso
      }
 
 }
-	TEST_CASE("Test 5") {
+	TEST_CASE("Test Tree 5") {
       family::Tree T5 ("Nave"); 
  	T5.addFather("Nave", "Shlomo")   
  	 .addMother("Nave", "Miri")   
