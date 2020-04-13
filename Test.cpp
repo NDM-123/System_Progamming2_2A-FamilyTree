@@ -295,7 +295,6 @@ family::Tree T3 ("naor"); // Yosef is the "root" of the tree (the youngest perso
      .addFather("Moshe", "Dov")
      .addFather("Dov", "Yoel")
      .addMother("Dov", "Ann")
-	 .addMother("Miri", "Rachel")
 	 .addMother("Ann", "Rose");
 		       CHECK( T5.relation("Nave") ==string("me"));
 		       CHECK( T5.relation("Shlomo") ==string("father"));
