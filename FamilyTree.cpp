@@ -107,7 +107,7 @@ return output+=gf;}
 
 	output+=gr;
   }
-
+		output="unrelated";
 		return output;
 }
 
