@@ -271,8 +271,8 @@ void Tree::print2DUtil(node *root, int space)			/*Geeks for Geeks - */
 bool Tree::ifNodeExists( node* Node, string key,node* &dest) 
 { 
 
-    if (Node == NULL) 
-        return false; 
+    if (Node == NULL)throw out_of_range("the name is no in the tree");
+        
 
 
     if (Node->name == key){
@@ -324,7 +324,7 @@ void Tree::find(node *root, int level, int &maxLevel, string &res,string g)
         } 
   
         find(root->mother, level, maxLevel, res,g); 
-    } 
+    }else{ throw out_of_range("Dosent exist 3"); }
 
 } 
 
