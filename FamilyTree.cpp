@@ -207,7 +207,8 @@ bool Tree::searchF(node *root, std::string a,std::string b)
 		{
 			searchF(root->father, a,b);
 			searchF(root->mother, a,b);
-			return false;
+		//	return false;			
+	 throw out_of_range(" dosn't exist");
 		}
 	}
 	else
@@ -235,7 +236,8 @@ bool Tree::searchM(node *root, std::string a,std::string b)
 		{
 			searchM(root->father, a,b);
 			searchM(root->mother, a,b);
-			return false;
+			//return false;			
+ 	throw out_of_range(" dosn't exist");
 		}
 	}
 	else
