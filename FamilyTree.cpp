@@ -47,7 +47,7 @@ Tree Tree::addMother(std::string a, std::string b)
 		throw out_of_range(a+" dosn't exist");
 	}
 	bool flag = searchM(this->head, a,b);
-	if(flag==false)throw out_of_range("dosn't exist");
+	//if(flag==false)throw out_of_range("dosn't exist");
 
 	return *this;
 }
@@ -59,7 +59,7 @@ Tree Tree::addFather(std::string a, std::string b)
 		throw out_of_range(a+" dosn't exist");
 	}
 	bool flag = searchF(this->head, a,b);
-	if(flag==false)throw out_of_range("dosn't exist");
+	//if(flag==false)throw out_of_range("dosn't exist");
 	return *this;
 }
 
