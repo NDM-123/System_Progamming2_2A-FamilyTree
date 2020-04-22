@@ -44,7 +44,7 @@ Tree Tree::addMother(std::string a, std::string b)
  
 	if (this->head == nullptr)
 	{
-		return *this;
+		throw out_of_range(a+" dosn't exist");
 	}
 	bool flag = searchM(this->head, a,b);
 	
@@ -56,7 +56,7 @@ Tree Tree::addFather(std::string a, std::string b)
 {
 	if (this->head == nullptr)
 	{
-		return *this;
+		throw out_of_range(a+" dosn't exist");
 	}
 	bool flag = searchF(this->head, a,b);
 
