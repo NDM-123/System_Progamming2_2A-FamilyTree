@@ -191,6 +191,7 @@ return true;
 
 bool Tree::searchF(node *root, std::string a,std::string b)
 {
+	if(root == nullptr)throw out_of_range("dosn't exist");
 	if (root != nullptr)
 	{
 		if (root->name == a)
@@ -217,6 +218,7 @@ bool Tree::searchF(node *root, std::string a,std::string b)
 }
 bool Tree::searchM(node *root, std::string a,std::string b)
 {
+	if(root == nullptr)throw out_of_range("dosn't exist");
 	if (root != nullptr)
 	{
 		if (root->name == a)
