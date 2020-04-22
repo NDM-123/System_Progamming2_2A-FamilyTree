@@ -36,7 +36,7 @@ public:
 	bool erase(node* root,std::string a);
 	void deleteBranch(node* root);
 	bool printPath(node* root,std::string a,vector<node*> &path);
-int countOccurences(char *str,string word) ;
+int countFreq(string &pat, string &txt) ;
 void find(node *root, int level, int &maxLevel, string &res,string g) ;
 bool ifNodeExists( node* Node, string key,node* &dest) ;
 void deleteTree(node* node)  ;

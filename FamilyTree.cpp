@@ -153,17 +153,23 @@ std::string Tree::find(std::string a)
 	if(gm==a)return this->head->father->mother->name;
 	if(gf==a)return this->head->mother->father->name;
 	if(gm==a)return this->head->mother->mother->name;
-char* great="great-";
-int i=countOccurences(great, a);   
+
+int i=countFreq(gr, a); 
+
     string res =""; 
-    int maxLevel = i+4; 
-char* grandfather="grandfather";
-  if (countOccurences(grandfather, a)){
+    int maxLevel = i+3; 
+
+
+  if (countFreq(gf, a)){
     find(this->head, 0, maxLevel, res,"Male");
+if(res=="")
+	      throw "doesnt exist1!";
 return res; 
 }
 
     find(this->head, 0, maxLevel, res,"Female");
+if(res=="")
+	      throw "doesnt exist2!";
 return res; 
 
 }
@@ -308,7 +314,7 @@ void Tree::find(node *root, int level, int &maxLevel, string &res,string g)
     if (root != NULL) 
     { 
         find(root->father, ++level, maxLevel, res,g); 
-  
+
         // Update level and resue 
         if (level == maxLevel&&root->Gender==g) 
         { 
@@ -319,31 +325,33 @@ void Tree::find(node *root, int level, int &maxLevel, string &res,string g)
   
         find(root->mother, level, maxLevel, res,g); 
     } 
+
 } 
 
 
-
-int Tree::countOccurences(char *str,  
-                    string word) 
+int Tree::countFreq(string &pat, string &txt) 
 { 
-    char *p; 
-  
-    // split the string by spaces in a 
-    vector<string> a; 
-  
-    p = strtok(str, " "); 
-    while (p != NULL) 
-    { 
-        a.push_back(p); 
-        p = strtok(NULL, " "); 
+    int M = pat.length(); 
+    int N = txt.length(); 
+    int res = 0; 
+    
+    /* A loop to slide pat[] one by one */
+    for (int i = 0; i <= N - M; i++) 
+    {  
+        /* For current index i, check for  
+           pattern match */
+        int j; 
+        for (j = 0; j < M; j++) 
+            if (txt[i+j] != pat[j]) 
+                break; 
+   
+        // if pat[0...M-1] = txt[i, i+1, ...i+M-1] 
+        if (j == M)   
+        { 
+           res++; 
+           j = 0; 
+        } 
     } 
-  
-    // search for pattern in a 
-    int c = 0; 
-    for (int i = 0; i < a.size(); i++) 
-  
-        // if match found increase count 
-        if (word == a[i]) 
-            c++; 
-    return c; 
+    return res; 
 } 
+
