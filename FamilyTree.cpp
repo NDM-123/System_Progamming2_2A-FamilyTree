@@ -212,7 +212,7 @@ bool Tree::searchF(node *root, std::string a,std::string b)
 	}
 	else
 	{
-		return false;
+		throw out_of_range("Error");
 	}
 }
 bool Tree::searchM(node *root, std::string a,std::string b)
@@ -238,7 +238,7 @@ bool Tree::searchM(node *root, std::string a,std::string b)
 	}
 	else
 	{
-		return false;
+		throw out_of_range("Error");
 	}
 }
 
