@@ -84,14 +84,14 @@ std::string Tree::relation(std::string a)
 	if(this->head->father->mother!=NULL&&this->head->father->mother->name==a)return gm;
 	if(this->head->mother->father!=NULL&&this->head->mother->father->name==a)return gf;
 	if(this->head->mother->mother!=NULL&&this->head->mother->mother->name==a)return gm;
-		cout<<this->head->name+"as"<<endl;
+
 	 vector<node*> path;
 	Tree::printPath(this->head,a,path);
 	std::reverse(path.begin(), path.end());	//reverse vector
 	string output="";
 	int vec_size=path.size();
 
-cout<<vec_size<<endl;
+
 	  for (int i=3; i < vec_size; i++){ 
 
     if(i==(vec_size-1) ){
@@ -107,7 +107,9 @@ return output+=gf;}
 
 	output+=gr;
   }
-		output="unrelated";
+if (output=="")
+output="unrelated";
+	
 		return output;
 }
 
@@ -117,14 +119,15 @@ bool Tree::printPath(node* root,std::string a,vector<node*> &path){
 		if(root==nullptr){ 
 		//cout<<"1"<<endl;
 		return false;}
+
 		if(root->name==a){
-		cout<<root->name<<endl;
+
 			path.push_back(root);
 			return true ;
 		}
-				//cout<<"3"<<endl;
-				cout<<root->name<<endl;
+
 		if(printPath(root->father,a,path)||printPath(root->mother,a,path)){
+
 		path.push_back(root);
 		return true;
 		}
@@ -150,7 +153,6 @@ std::string Tree::find(std::string a)
 	if(gm==a)return this->head->father->mother->name;
 	if(gf==a)return this->head->mother->father->name;
 	if(gm==a)return this->head->mother->mother->name;
-
 char* great="great-";
 int i=countOccurences(great, a);   
     string res =""; 
@@ -265,11 +267,14 @@ bool Tree::ifNodeExists( node* Node, string key,node* &dest)
 
     if (Node == NULL) 
         return false; 
-  
+
+
     if (Node->name == key){
 	dest=Node; 
         return true; 
   }
+
+
     /* then recur on left sutree */
     bool res1 = ifNodeExists(Node->mother, key,dest); 
   
