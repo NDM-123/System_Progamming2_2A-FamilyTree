@@ -156,7 +156,8 @@ std::string Tree::find(std::string a)
 	if(gm==a)return this->head->mother->mother->name;
 
 int i=countFreq(gr, a); 
-
+if(i==0){
+		      throw "doesnt exist!!!!!";}
     string res =""; 
     int maxLevel = i+3; 
 
