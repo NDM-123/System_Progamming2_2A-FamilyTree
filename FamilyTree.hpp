@@ -40,5 +40,6 @@ int countFreq(string &pat, string &txt) ;
 void find(node *root, int level, int &maxLevel, string &res,string g) ;
 bool ifNodeExists( node* Node, string key,node* &dest) ;
 void deleteTree(node* node)  ;
+bool checkPattern(string str, string pattern) ;
 };
 }
