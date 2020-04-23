@@ -140,6 +140,7 @@ bool Tree::printPath(node* root,std::string a,vector<node*> &path){
 
 std::string Tree::find(std::string a)
 {
+
 	string me="me";
 	string f="father";
 	string m="mother";
@@ -160,14 +161,16 @@ int i=countFreq(gr, a);
     int maxLevel = i+3; 
 
 
-  if (isSubstring(gf, a)){
+  if (countFreq(gf, a)){
     find(this->head, 0, maxLevel, res,"Male");
+
 if(res=="")
 	      throw "doesnt exist1!";
 return res; 
 }
-  if (isSubstring(gm, a)){
+  if (countFreq(gm, a)){
     find(this->head, 0, maxLevel, res,"Female");
+
 if(res=="")
 	      throw "doesnt exist2!";
 return res; 
@@ -319,6 +322,7 @@ void Tree::find(node *root, int level, int &maxLevel, string &res,string g)
 { 
     if (root != NULL) 
     { 
+
         find(root->father, ++level, maxLevel, res,g); 
 
         // Update level and resue 
@@ -361,24 +365,3 @@ int Tree::countFreq(string &pat, string &txt)
     return res; 
 } 
 
-int Tree::isSubstring(string s1, string s2) 
-{ 
-    int M = s1.length(); 
-    int N = s2.length(); 
-  
-    /* A loop to slide pat[] one by one */
-    for (int i = 0; i <= N - M; i++) { 
-        int j; 
-  
-        /* For current index i, check for pattern match */
-        for (j = 0; j < M; j++) 
-            if (s2[i + j] != s1[j]) 
-                break; 
-  
-        if (j == M) 
-            return i; 
-    } 
-  
-    return -1; 
-} 
-  
