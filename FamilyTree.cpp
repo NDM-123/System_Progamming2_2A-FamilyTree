@@ -140,6 +140,7 @@ bool Tree::printPath(node* root,std::string a,vector<node*> &path){
 
 std::string Tree::find(std::string a)
 {
+
 	string me="me";
 	string f="father";
 	string m="mother";
@@ -167,13 +168,14 @@ if(res=="")
 	      throw "doesnt exist1!";
 return res; 
 }
-
+  if (countFreq(gm, a)){
     find(this->head, 0, maxLevel, res,"Female");
 
 if(res=="")
 	      throw "doesnt exist2!";
 return res; 
-
+}
+	      throw "doesnt exist4!";
 }
 
 
