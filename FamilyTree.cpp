@@ -280,18 +280,8 @@ void Tree::print2DUtil(node *root, int space)			/*Geeks for Geeks - */
 bool Tree::ifNodeExists( node* Node, string key,node* &dest) 
 { 
 
-    if (Node == NULL) return false;
-        if (Node->father!=NULL&&Node->father->name == key){
-
-free(&Node->father->name);
-free(Node->father);
-Node->father=NULL;
-}
-      if (Node->mother!=NULL&&Node->mother->name == key){
-free(&Node->mother->name);
-free(Node->mother);
-Node->mother=NULL;
-}
+    if (Node == NULL)throw out_of_range("the name is no in the tree");
+        
 
 
     if (Node->name == key){
