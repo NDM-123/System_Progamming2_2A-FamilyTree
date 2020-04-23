@@ -162,12 +162,14 @@ int i=countFreq(gr, a);
 
   if (countFreq(gf, a)){
     find(this->head, 0, maxLevel, res,"Male");
+
 if(res=="")
 	      throw "doesnt exist1!";
 return res; 
 }
 
     find(this->head, 0, maxLevel, res,"Female");
+
 if(res=="")
 	      throw "doesnt exist2!";
 return res; 
@@ -318,6 +320,7 @@ void Tree::find(node *root, int level, int &maxLevel, string &res,string g)
 { 
     if (root != NULL) 
     { 
+
         find(root->father, ++level, maxLevel, res,g); 
 
         // Update level and resue 
@@ -329,7 +332,7 @@ void Tree::find(node *root, int level, int &maxLevel, string &res,string g)
         } 
   
         find(root->mother, level, maxLevel, res,g); 
-    }else{ throw out_of_range("Dosent exist 3"); }
+    }
 
 } 
 
