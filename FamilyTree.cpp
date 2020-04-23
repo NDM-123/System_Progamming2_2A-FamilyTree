@@ -374,4 +374,3 @@ int Tree::countFreq(string &pat, string &txt)
     } 
     return res; 
 } 
-
