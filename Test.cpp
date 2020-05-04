@@ -1,4 +1,3 @@
-
 //Naor Maoz_Oz Klingel
 
 #include "doctest.h"
