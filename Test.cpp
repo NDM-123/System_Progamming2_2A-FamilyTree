@@ -1,3 +1,4 @@
+
 //Naor Maoz_Oz Klingel
 
 #include "doctest.h"
@@ -319,7 +320,6 @@ family::Tree T3 ("naor"); // Yosef is the "root" of the tree (the youngest perso
 		       CHECK(T5.find("great-great-great-grandmother")==string("Ann"));		//105
 		       try{
 		           T5.find("Ori");
-			      
 		       }
 		       catch(exception &ex){
 		           cout<<ex.what()<<endl;
